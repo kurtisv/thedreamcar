@@ -1,0 +1,56 @@
+/* Styles globaux pour la page principale */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa; /* Gris clair */
+  }
+  
+  /* Style des cartes de voitures */
+  .carCard {
+    width: 80%;
+    max-width: 600px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px 0;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .carCard:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Titres des voitures */
+  .carTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Informations de la voiture */
+  .carInfo {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  /* Image des voitures */
+  .carImage {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  /* Description */
+  .carDescription {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+  
