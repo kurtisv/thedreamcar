@@ -12,5 +12,11 @@ export type Car = {
     torque: number;
     imageUrl: string;
     url: string;
-    description: string[];    
-}; 
+    description: string;  
+    // Nouvelle structure pour la galerie
+    gallery: {
+        category: "interior_front" | "interior_back" | "exterior"; // Catégories définies
+        imageUrl: string;
+        description: string;
+    }[];
+};

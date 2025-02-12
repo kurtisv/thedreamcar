@@ -229,3 +229,46 @@ body {
     font-size: 16px;
   }
 }
+
+/* 📸 Galerie d'images */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.galleryItem {
+  width: 45%;
+  max-width: 300px;
+  background: #1e1e1e;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.galleryImage {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.galleryImage:hover {
+  transform: scale(1.05);
+}
+
+.galleryDescription {
+  font-size: 14px;
+  color: #ddd;
+  margin-top: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .galleryItem {
+    width: 100%;
+  }
+}
+

@@ -9,7 +9,7 @@ export async function getcars() {
   });
 
   return client.fetch(
-    groq`*[_type == "car"] {
+    groq`*[_type == "car"] | order(price asc) {
       _id,
       name,
       brand,
@@ -20,7 +20,12 @@ export async function getcars() {
       horsepower,
       torque,
       "imageUrl": image.asset->url,
-      description
-    }`
+      description,
+      "gallery": gallery[] {
+        category,
+        "imageUrl": image.asset->url,
+        description
+      }
+    }`    
   );
 }

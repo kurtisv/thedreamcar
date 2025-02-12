@@ -66,26 +66,34 @@ const projectSchemaCar = {
       title: "Alt",
       type: "string",
     }),
-    defineField({
-      name: "gallery",
-      title: "Gallery",
-      type: "array",
-      of: [
-        {
-          type: "object",
-          fields: [
-            {
-              name: "image",
-              title: "Image",
-              type: "image",
-              options: { hotspot: true },
-            },
-            { name: "description", title: "Description", type: "text" },
-          ],
-        },
-      ],
-      options: { layout: "grid" },
-    }),
+      // 🖼️ Nouvelle galerie organisée par catégorie
+      defineField({
+        name: 'gallery',
+        title: 'Gallery',
+        type: 'array',
+        of: [
+          {
+            type: 'object',
+            fields: [
+              {
+                name: 'category',
+                title: 'Category',
+                type: 'string',
+                options: {
+                  list: [
+                    { title: 'Intérieur Avant', value: 'interior_front' },
+                    { title: 'Intérieur Arrière', value: 'interior_back' },
+                    { title: 'Extérieur', value: 'exterior' },
+                  ],
+                },
+              },
+              { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+              { name: 'description', title: 'Description', type: 'text' }
+            ]
+          }
+        ],
+        options: { layout: 'grid' }
+      }),
   ],
 };
 
