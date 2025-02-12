@@ -10,15 +10,44 @@ export default async function Home() {
       {cars.map((car: Car) => (
         <div key={car._id} className={styles.carCard}>
           <h1 className={styles.carTitle}>{car.name}</h1>
-          <p className={styles.carInfo}><strong>Marque:</strong> {car.brand}</p>
-          <p className={styles.carInfo}><strong>Modèle:</strong> {car.model}</p>
-          <p className={styles.carInfo}><strong>Année:</strong> {car.year}</p>
-          <p className={styles.carInfo}><strong>Prix:</strong> {car.price} $</p>
-          <p className={styles.carInfo}><strong>Carburant:</strong> {car.fuelType}</p>
-          <p className={styles.carInfo}><strong>Puissance:</strong> {car.horsepower} ch</p>
-          <p className={styles.carInfo}><strong>Couple:</strong> {car.torque} Nm</p>
-          <img className={styles.carImage} src={car.imageUrl} alt={car.name} />
-          <p className={styles.carDescription}>{car.description}</p>
+          <div className={styles.carDetails}>
+            <img
+              className={styles.carImage}
+              src={car.imageUrl}
+              alt={car.name}
+            />
+            <p className={styles.carDescription}>{car.description}</p>
+          </div>
+          <h2 className={styles.carSubtitle}>Informations</h2>
+          <p className={styles.carInfo}>
+            <strong>Marque:</strong> {car.brand}
+          </p>
+          <div className={styles.carSeparator}>
+            <div className={styles.carRow}>
+              <span className={styles.carLabel}>Modèle:</span>
+              <span>{car.model}</span>
+            </div>
+            <div className={styles.carRow}>
+              <span className={styles.carLabel}>Année:</span>
+              <span>{car.year}</span>
+            </div>
+            <div className={styles.carRow}>
+              <span className={styles.carLabel}>Prix:</span>
+              <span>{car.price} $</span>
+            </div>
+            <div className={styles.carRow}>
+              <span className={styles.carLabel}>Carburant:</span>
+              <span>{car.fuelType}</span>
+            </div>
+            <div className={styles.carRow}>
+              <span className={styles.carLabel}>Puissance:</span>
+              <span>{car.horsepower} ch</span>
+            </div>
+            <div className={styles.carRow}>
+              <span className={styles.carLabel}>Couple:</span>
+              <span>{car.torque} Nm</span>
+            </div>
+          </div>
         </div>
       ))}
     </div>

@@ -1,56 +1,153 @@
-/* Styles globaux pour la page principale */
+/* 🌎 Styles globaux */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212; /* Fond sombre chic */
+  color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Conteneur principal */
 .container {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+/* 🎟️ Style des cartes de voitures */
+.carCard {
+  width: 90%;
+  max-width: 700px;
+  background: linear-gradient(145deg, #1e1e1e, #292929);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  margin: 20px 0;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.carCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Titres */
+.carTitle {
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  color: #e0e0e0;
+}
+
+.carSubtitle {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 15px;
+  color: #bbb;
+}
+
+/* 📸 Image et description alignées */
+.carDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.carImage {
+  width: 45%;
+  max-width: 280px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carImage:hover {
+  transform: scale(1.05);
+}
+
+/* 📖 Description */
+.carDescription {
+  width: 50%;
+  font-size: 16px;
+  color: #ddd;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* 📌 Informations */
+.carInfo {
+  font-size: 16px;
+  color: #aaa;
+  margin: 8px 0;
+  text-align: center;
+}
+
+/* Ligne séparatrice */
+/* 📌 Conteneur en mode tableau */
+.carSeparator {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+  gap: 10px;
+  padding: 15px;
+  background: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 🎭 Chaque ligne de donnée */
+.carRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #292929;
+  color: #f5f5f5;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+/* 🖋️ Style des labels */
+.carLabel {
+  font-weight: bold;
+  color: #ccc;
+}
+
+/* 🌍 Responsive */
+@media (max-width: 768px) {
+  .carSeparator {
+    grid-template-columns: 1fr; /* Passe en 1 colonne */
+  }
+
+  .carRow {
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #f8f9fa; /* Gris clair */
-  }
-  
-  /* Style des cartes de voitures */
-  .carCard {
-    width: 80%;
-    max-width: 600px;
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 15px 0;
     text-align: center;
-    transition: transform 0.3s ease-in-out;
   }
-  
-  .carCard:hover {
-    transform: scale(1.03);
+}
+
+
+/* 🖥️ RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .carCard {
+    width: 95%;
+    padding: 15px;
   }
-  
-  /* Titres des voitures */
-  .carTitle {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
+
+  .carDetails {
+    flex-direction: column;
+    text-align: center;
   }
-  
-  /* Informations de la voiture */
-  .carInfo {
-    font-size: 16px;
-    color: #555;
-    margin: 5px 0;
-  }
-  
-  /* Image des voitures */
+
   .carImage {
-    width: 100%;
-    max-width: 250px;
-    border-radius: 8px;
-    margin-top: 10px;
+    width: 80%;
+    max-width: 100%;
+    margin-bottom: 10px;
   }
-  
-  /* Description */
+
   .carDescription {
-    font-size: 14px;
-    color: #666;
-    margin-top: 10px;
-    line-height: 1.5;
+    width: 90%;
   }
-  
+}
