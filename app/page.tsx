@@ -34,10 +34,7 @@ export default function Home() {
             style={{ cursor: "pointer" }} // Ajoute un effet interactif
           >
             <h1 className={styles.carTitle}>{car.name}</h1>
-            <div className={styles.carDetails}>
-              <img className={styles.carImage} src={car.imageUrl} alt={car.name} />
-              <p className={styles.carDescription}>{car.description}</p>
-            </div>
+              <img className={styles.carImagehome} src={car.imageUrl} alt={car.name} />
             <h2 className={styles.carSubtitle}>Informations</h2>
             <p className={styles.carInfo}>
               <strong>Marque:</strong> {car.brand}
