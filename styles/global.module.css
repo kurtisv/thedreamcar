@@ -12,14 +12,14 @@ body {
 /* Conteneur principal */
 .container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+    flex-direction: column;
+    align-items: center;
   padding: 30px;
 }
 
 /* 🎟️ Style des cartes de voitures */
 .carCard {
-  width: 90%;
+  width: 40%;
   max-width: 700px;
   background: linear-gradient(145deg, #1e1e1e, #292929);
   border-radius: 12px;
@@ -27,6 +27,9 @@ body {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
   margin: 20px 0;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .carCard:hover {
@@ -58,8 +61,8 @@ body {
   margin-top: 15px;
 }
 
-.carImage {
-  width: 45%;
+.carImagehome {
+  width: 55%;
   max-width: 280px;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
@@ -72,7 +75,7 @@ body {
 /* 📖 Description */
 .carDescription {
   width: 50%;
-  font-size: 16px;
+  font-size: 14px;
   color: #ddd;
   line-height: 1.6;
   text-align: justify;
@@ -96,6 +99,7 @@ body {
   background: #1e1e1e;
   border-radius: 8px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
 }
 
 /* 🎭 Chaque ligne de donnée */
@@ -230,27 +234,68 @@ body {
   }
 }
 
-/* 📸 Galerie d'images */
+/* 📸 Conteneur principal de la galerie */
 .gallery {
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20px;
+  padding: 20px;
 }
 
+/* 🎨 Titre de la galerie */
+.galleryTitle {
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* 🎚️ Boutons de filtre */
+.galleryFilter {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.galleryFilterButton {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.galleryFilterButton:hover {
+  background-color: #666;
+}
+
+/* 🖼️ Conteneur des images */
+.galleryContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* 🎞️ Élément de la galerie */
 .galleryItem {
-  width: 45%;
-  max-width: 300px;
   background: #1e1e1e;
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
+  overflow: hidden;
 }
 
+/* 📷 Images */
 .galleryImage {
   width: 100%;
+  height: 200px; /* Fixe une hauteur pour assurer la proportionnalité */
+  object-fit: cover; /* Garde le ratio et recadre si nécessaire */
   border-radius: 8px;
   transition: transform 0.3s ease-in-out;
 }
@@ -259,16 +304,117 @@ body {
   transform: scale(1.05);
 }
 
+/* 📝 Description */
 .galleryDescription {
   font-size: 14px;
   color: #ddd;
   margin-top: 5px;
+  text-align: center;
 }
 
-/* Responsive */
+/* 📱 Responsive Design */
 @media (max-width: 768px) {
+  .galleryContainer {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
   .galleryItem {
     width: 100%;
   }
 }
+/* 📌 Conteneur principal */
+.carDetailContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background-color: #121212;
+  color: #f5f5f5;
+}
 
+/* 🏎️ Titre de la voiture */
+.carTitle {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: #e0e0e0;
+  margin-top: 20px;
+}
+
+/* 📝 Description */
+.carDescription {
+  font-size: 16px;
+  color: #bbb;
+  text-align: center;
+  max-width: 800px;
+  line-height: 1.6;
+  margin: 15px auto;
+}
+
+/* 🚗 Image de la voiture */
+.carImage {
+  width: 45%;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  margin: 20px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carImage:hover {
+  transform: scale(1.05);
+}
+
+/* 🖼️ Galerie d'images */
+.gallery {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+}
+
+/* 🚨 Message d'erreur */
+.notFound {
+  font-size: 18px;
+  color: red;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* 🌍 Responsive */
+@media (max-width: 768px) {
+  .carDetailContainer {
+    padding: 15px;
+  }
+
+  .carTitle {
+    font-size: 24px;
+  }
+
+  .carDescription {
+    font-size: 14px;
+    max-width: 90%;
+  }
+
+  .carImage {
+    width: 95%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .carTitle {
+    font-size: 22px;
+  }
+
+  .carDescription {
+    font-size: 13px;
+    max-width: 100%;
+  }
+
+  .carImage {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
